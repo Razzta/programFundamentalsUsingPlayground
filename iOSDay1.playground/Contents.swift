@@ -22,6 +22,7 @@ Note: **var** defines that your creating a variable
 */
 // Type code here !!!
 
+var FirstLastName = "Raza Qarizada"
 
 /*:
 Congratulations on creating your first variable. There's many different variables that you can create. An important concept that we must discuss is types. **Types** define the values that can be stored in a variable. A list of the most common value types that you can work with are as follows.
@@ -44,6 +45,11 @@ Create 4 Variables that store a Boolean Value / an Integer Value / a Floating Po
 */
 // Type code here !!!
 
+var razIsAwesome = true 
+// Im not understanding boolean
+var FloatingPointValue:Float = 3453.453
+var IntegarValue:Int = 666
+var StringValue = "Raza Qarizada"
 
 
 /*:
@@ -60,6 +66,7 @@ Now, you have a try at this. Create a variable that is constant. Also, try and a
 */
 // Type code here !!!
 
+let myNameBe:String = "Raza"
 
 
 /*:
@@ -77,6 +84,11 @@ Now, we'll look at operators. You first learned about operators in elementary sc
 */
 // Type code here !!!
 
+var a = 10
+a = a + 1
+a = a - 1
+a = a * a
+
 
 /*:
 
@@ -88,6 +100,10 @@ In the results pane, you'll see 10, 11, 10 and 100 respectively. Now try this:
 
 */
 // Type code here !!!
+
+var b = 10
+b += 10
+b -= 10
 
 /*:
 **+=** is an operator that means "add then assign to." In our case it means "take the current value of b, add 10 to it, then put the result back into b." As you might imagine, **-=** does the same but subtracts rather then adds. So, that code will show 10, 20, 10 in the results pane.
@@ -101,6 +117,9 @@ If you want to add or subtract 1 from a number, there are special operators just
 */
 // Type code here !!!
 
+var bb = 10
+++bb
+--bb
 
 
 /*:
@@ -124,6 +143,26 @@ Type the following into playground and see the result.
 
 */
 // Type code here !!!
+
+var aa = 1.1
+var bbb = 2.2
+var c = a + b
+c > 3
+c >= 3
+c > 4
+c < 4
+aa == bbb
+
+var a2 = 200
+var b2 = 39
+var c2 = a2 * b2
+
+c2 > 32
+c2 >= 32123
+c2 > 39393939339
+c2 > 932804039284023
+a2 == b2
+a2 != b2
 
 
 /*:
@@ -162,6 +201,13 @@ var name = "Your Name"
 */
 // Type code here !!!
 
+var name = "Raza"
+var age = 25
+print("My name is \(name) and my age is \(age)") 
+
+var score = 23
+var multi = 3
+var output = "Your score is \(score * multi)" // lol ;p
 
 /*:
 
@@ -177,7 +223,7 @@ Arrays let you group lots of values together into a single collection, then acce
 ### Have a go. Create an Array that stores the names of your family members.
 */
 // Type code here !!!
-
+var nuclearFamily = ["Abbas", "Latifa", "Raza", "Hamed", "Sadeq", "Sara"]
 /*:
 
 Swift uses brackets to mark the start and end of an array, and each item in the array is separated with a comma.
@@ -195,6 +241,14 @@ So as an example this would look like the following.
 */
 // Type code here !!!
 
+var nuclearFamilyNames = ["Abbas", "Latifa", "Raza", "Hamed", "Sadeq", "Sara"]
+nuclearFamilyNames[0]
+nuclearFamilyNames[1]
+nuclearFamilyNames[2]
+nuclearFamilyNames[3]
+nuclearFamilyNames[4]
+nuclearFamilyNames[5]
+
 /*:
 
 ## Creating arrays
@@ -207,6 +261,11 @@ If you make an array using the syntax shown above, Swift creates the array and f
 ### Have a go and try this code in Playgrounds **NOTE** remember to delete this code after this is only to show the error.
 */
 // Type code here !!!
+
+// var game: [string]
+// game[0] = "Fly or Die"
+
+
 
 /*:
 
@@ -223,6 +282,9 @@ There are a few ways to express this correctly, and the one that probably makes 
 */
 // Type code here !!!
 
+var game: [String] = []
+game.append("Come do the dark side >:)")
+game.append("we have smokes :p")
 
 /*:
 ## Array Operators
@@ -242,6 +304,22 @@ bothGameLists += ["Grand Theft Auto 5"]
 */
 
 // Type code here !!!
+
+var gameList1 = ["Final Fantasy", "Halo", "Doom"]
+var gameList2 = ["Runescape", "World Of Worldcraft"]
+var combinedGameList = gameList1 + gameList2
+combinedGameList += ["GTA"]
+
+
+// combinedGameList.removeAtIndex(find(combinedGameList, "GTA")!)
+// unsafe way to remove something from an array ^
+
+if let index = find(combinedGameList, "Halo") {
+    combinedGameList.removeAtIndex(index)
+}
+// safe way to remove something from an array ^
+
+print(combinedGameList)
 
 
 /*:
@@ -286,6 +364,15 @@ As with arrays, you can store a wide variety of values inside dictionaries, alth
 */
 // Type code here !!!
 
+var person = ["first": "Raza",
+    "middle": "Abbas",
+    "last": "Qarizada",
+    "month": "May",
+    "website": "spayce.me"]
+
+person["last"]
+person["first"]
+person["website"]
 
 /*:
 
@@ -351,6 +438,33 @@ Have a go. Write some code that will detect if two values are the same. If they 
 */
 // Type code here !!!
 
+var action: String
+var individual = "lover"
+if individual == "hater" {
+    action = "hate"
+} else if individual == "lover" {
+    action = "love"
+} else {
+    action = "Pesant"
+}
+print(action)
+
+var grades: String
+var party = false
+var study = true
+
+
+if party && study {
+    grades = "Average"
+} else if party && !study {
+    grades = "Poor"
+} else if !party && study {
+    grades = "Excellent"
+} else  {
+  grades = "What are you doing with your life!"
+}
+
+
 /*:
 ## Loops
 
@@ -385,7 +499,10 @@ Using the *closed range operator*, we could re-write that whole thing in three l
 */
 // Type code here !!!
 
-
+for z in 0...99 {
+    println("(z)x 10 is(z*10)")
+    
+}
 /*:
 ## Looping over arrays
 
@@ -400,7 +517,10 @@ Swift provides a very simple way to loop over all the elements in an array. Beca
 */
 // Type code here !!!
 
-
+var tames = ["doom", "braid", "GTA 1969", "wow", "RS", "COD", "Minecraft", "Stock Market", "Life", "Sims"]
+for song in tames {
+    println("Myfavorit game is (game)")
+}
 
 /*:
 
@@ -417,7 +537,18 @@ You can also use the for i in loop construct to loop through arrays, because you
 */
 // Type code here !!!
 
+var pleb = ["throw", "sit", "bang", "assasinate", "smile"]
+var act = ["gun", "bed", "milf", "animal", "Pikacho"]
 
+for var d = 0; d < 4; d++ {
+    println("(pleb[d] play (act[d])")
+}
+
+//for y in 0...4 {
+//println("(pleb[y] play (act[y])")
+    
+    
+//}
 
 /*:
 
@@ -443,7 +574,16 @@ We can combine two of our previous loops to create this:
 
 // Type code here !!!
 
-
+var team1 = ["Toronto Raptors", "Toronto Maple Leafs", "Toronto Football Club", "Toronto Rock"]
+var sport1 = ["Basketball", "Hockey", "Soccer", "Lacrosse"]
+for var i = 0; i < team1.count; i++ {
+    var str1 = "\(team1[i]) play"
+    for var j = 0; j < sport1.count; j++
+    {
+        str1 += "\(sport1[j])"
+    }
+println(str1)
+}
 
 /*:
 
@@ -468,6 +608,16 @@ These while loops work best when you're using unknown data, such as downloading 
 ### Have a go. Create a while loop that stops when a value has reached 100. Make sure to print this out on success.
 */
 // Type code here !!!
+
+var counter = 0
+while true {
+    print("Counter is now (counter)")
+    ++counter
+    if counter == 100 {
+        break
+}
+}
+
 
 
 
@@ -524,6 +674,13 @@ One thing you should know is that switch/case blocks in Swift don't fall through
 */
 // Type code here !!!
 
+let favoriteGames = 6
+switch favoriteGames {
+case 0...1: println("doom")
+case 2...3: println("super Mario")
+case 4...5: println("super smash bros")
+default: println("Dont you have a favorite game?")
+}
 
 
 /*:
@@ -549,7 +706,10 @@ That runs the function (or "calls" it), so now you'll see "Super Meat Boy" print
 */
 // Type code here !!!
 
-
+func favoriteGame() {
+    println("doom")
+}
+favoriteGame()
 
 /*:
 Of course, that's a ridiculous example – that function does the same thing no matter what, so there's no point it existing. But what if we wanted to print a different album each time? In that case, we could tell Swift we want our function to accept a value when it's called, then use that value inside it.
@@ -566,6 +726,14 @@ Have a go. create a function that displays your favorite thing. Taking your favo
 
 */
 // Type code here !!!
+
+func favoriteGame(game:String) {
+    println("Favourite MMORPG is \(game)")
+}
+
+favoriteGame("runescape")
+
+
 
 
 
@@ -586,6 +754,16 @@ Have a go. Create a function that accepts multiple parameters.
 
 */
 // Type code here !!!
+
+func printNetworth(name:String, money:Int) {
+    println("\(name) had aproximately \(money) U.S.D")
+}
+printNetworth("Mr.Monopoly", 20000000)
+printNetworth("Black Panther", 90000000000000)
+printNetworth("Bruce Wayne", 700000000000)
+
+
+
 
 /*:
 
@@ -620,6 +798,26 @@ You can now call that by passing the game name in and acting on the result:
 ### Have a go Create a function that as above returns a boolean value. Use if conditions to determine if the passed value is true or not. Then in an if statement use the function to determine whether the value passed is true or false.
 
 */
+
+func someGamesILike(name:String) -> Bool {
+    if name == "Metroid" {return true}
+    else if name == "Super Meat Boy" {return true}
+    else if name == "Super Mario" {return true}
+    else if name == "Dora" {return true}
+    else if name == "Doom" {return true}
+    else {return false}
+}
+
+if someGamesILike("Doom") {
+    println("Programmed by John Carmack")
+} else {
+    println("who made that?!")
+}
+if someGamesILike("Super Meat Boy") {
+    println("Programmed by Team Meat")
+} else {
+    println("Who made that?!")
+}
 
 
 /*:
